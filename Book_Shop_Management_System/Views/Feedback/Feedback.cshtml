@@ -1,0 +1,31 @@
+﻿@model WebApplication1.Models.Feedback
+
+@{ ViewBag.Title = "Give Feedback"; }
+
+<h2>Give Feedback</h2>
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CustomerID)
+                    @Html.EditorFor(model => model.CustomerID, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.BookID)
+                                    @Html.EditorFor(model => model.BookID, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Rating)
+                                                    @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div>
+
+                                                                <div class="form-group">
+                                                                    @Html.LabelFor(model => model.Comment)
+                                                                    @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control" } })
+                                                                </div>
+
+                                                                                <button type="submit" class="btn btn-primary">Submit Feedback</button>}
